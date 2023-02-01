@@ -1,0 +1,49 @@
+t = int(input())
+res = []
+for i in range(t):
+  RCAB = input()
+  RCAB = RCAB.split(' ')
+  R = int(RCAB[0])
+  C = int(RCAB[1])
+  A = int(RCAB[2])
+  B = int(RCAB[3])
+  res1 = []
+  res2 = []
+  for i in range(R):
+    if i%2 == 0:
+      count = 0
+      str = []
+      for i in range(C):
+        str.append('X'*B)
+        count += 1
+        if count == C:
+          break
+        str.append('.'*B)
+        count += 1
+        if count == C:
+          break
+      str1 = ''.join(str)
+      for i in range(A):
+        res1.append(str1)
+    elif i%2 != 0:
+      count = 0
+      str = []
+      for i in range(C):
+        str.append('.'*B)
+        count += 1
+        if count == C:
+          break
+        str.append('X'*B)
+        count += 1
+        if count == C:
+          break
+      str1 = ''.join(str)
+      for i in range(A):
+        res1.append(str1)
+  res2 = '\n'.join(res1)
+  res.append(res2)
+print('\n\n'.join(res))
+
+
+    
+  
